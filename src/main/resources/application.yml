@@ -1,0 +1,32 @@
+
+spring:
+
+  datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/enset-sec
+        username: root
+        password:
+        show-sql: true
+
+
+  server:
+       port: 9000
+
+ #mvc:
+  #     view:
+   #     prefix: /
+    #    suffix: .jsp
+
+  jpa:
+       generate-ddl : true
+       hibernate:
+          ddl-auto: update
+          show-sql: true
+       properties:
+          hibernate:
+               dialect: org.hibernate.dialect.MySQL5Dialect
+#security:
+ # user:
+  #  name: admin
+  #  password: 123
+
