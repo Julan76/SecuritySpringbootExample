@@ -9,6 +9,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,16 +25,19 @@ import java.util.Map;
 public class EtudiantRestService {
     @Autowired
     private EtudiantRepository etudiantRepository;
+
     @Secured(value={"ROLE_ADMIN","ROLE_SCOLARITE"})
-    @RequestMapping(value="/saveEtudiant" ,method = RequestMethod.GET)
-    public Etudiant saveEtudiant(Etudiant e){
+    @RequestMapping(value="/etudiants" ,method = RequestMethod.POST)
+    public Etudiant saveEtudiant(@RequestBody Etudiant e){
         return etudiantRepository.save(e);
     }
+
     @Secured(value={"ROLE_ADMIN","ROLE_SCOLARITE","ROLE_PROF","ROLE_ETUDIANT"})
     @RequestMapping(value="/etudiants")
     public Page<Etudiant> listEtudiant(int page, int size){
         return etudiantRepository.findAll(new PageRequest(page,size));
     }
+
     @RequestMapping(value="/getLogedUser")
     public Map<String,Object> getLoggedUser(HttpServletRequest httpServletRequest){
         HttpSession httpSession=httpServletRequest.getSession();

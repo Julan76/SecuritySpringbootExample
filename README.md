@@ -1,1 +1,1 @@
-"Security with Spring boot App. Inspired from Mohamed Yousfi class https://www.youtube.com/watch?v=_1welXC8gEo" 
+"Security with Spring boot App. Inspired from Mohamed Youssfi class https://www.youtube.com/watch?v=_1welXC8gEo" 

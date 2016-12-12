@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"
+          th:href="@{ css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css"
+          th:href="@{css/myStyle.css}"/>
+</head>
+<body ng-app="myApp" ng-controller="InscriptionController">
+<div class="col-sm-6 col-md-6 col-xs-12 spacer">
+    <div class="panel panel-info">
+        <div class="panel panel-heading"> Inscription d'un étudiant</div>
+        <div class="panel panel-body">
+            <form>
+                <div class="form-group">
+                    <label class="control-label">Nom: </label>
+                    <input class="form-control" type="text" ng-model="etudiant.nom"/>
+                    <span class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Prenom: </label>
+                    <input class="form-control" type="text" ng-model="etudiant.prenom"/>
+                    <span class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Date Naissance: </label>
+                    <input class="form-control" type="date" ng-model="etudiant.dateNaissance"/>
+                    <span class="error"></span>
+                </div>
+                <div>
+                    <button class="btn btn-primary" ng-click="saveEtudiant()">Save</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/myApp.js"></script>
+</body>
+</html>
