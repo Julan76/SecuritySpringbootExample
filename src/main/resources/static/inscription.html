@@ -17,21 +17,21 @@
             <form>
                 <div class="form-group">
                     <label class="control-label">Nom: </label>
-                    <input class="form-control" type="text" ng-model="etudiant.nom"/>
+                    <input class="form-control" type="text" ng-model="nom"/>
                     <span class="error"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Prenom: </label>
-                    <input class="form-control" type="text" ng-model="etudiant.prenom"/>
+                    <input class="form-control" type="text" ng-model="prenom"/>
                     <span class="error"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Date Naissance: </label>
-                    <input class="form-control" type="date" ng-model="etudiant.dateNaissance"/>
+                    <input class="form-control" type="date" ng-model="dateNaissance"/>
                     <span class="error"></span>
                 </div>
                 <div>
-                    <button class="btn btn-primary" ng-click="saveEtudiant()">Save</button>
+                    <button class="btn btn-primary" ng-click="saveEtudiant(nom,prenom,dateNaissance)">Save</button>
                 </div>
             </form>
         </div>

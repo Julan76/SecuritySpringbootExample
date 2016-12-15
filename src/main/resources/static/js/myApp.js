@@ -7,9 +7,7 @@ myApp.controller("InscriptionController",function ($scope,$http) {
         $http({
             method: 'POST',
             url: '/etudiants',
-            headers:{
-                'Content-Type': application/json
-            },
+            data:$scope.etudiant,
         }).then(function successCallback(response) {
             $scope.etudiant=response;
             // this callback will be called asynchronously
